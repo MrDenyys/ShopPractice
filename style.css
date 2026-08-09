@@ -56,6 +56,7 @@ button[data-Add]{
     display: flex;
     justify-content: left;
     align-items: center;
+    gap: 3px;
 }
 
 .second-main-div p{
@@ -109,6 +110,28 @@ button[data-Add]{
     z-index: 1000;
 }
 
+.containerCreate{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 800px;
+    padding: 40px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    
+    border-radius: 20px;
+    
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    display: none;
+}
+
 .categories{
         background-color: #00529C;
         padding-top: 10px;
@@ -151,3 +174,4 @@ button[data-Add]{
     background-color: #00529C;
     border-radius: 4px;
 }
+
