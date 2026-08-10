@@ -119,8 +119,8 @@ button[data-Add]{
     width: 800px;
     padding: 40px;
 
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background-color: #fff;
+    box-shadow: 2px 2px #00529C;
     
     border-radius: 20px;
     
@@ -131,7 +131,22 @@ button[data-Add]{
 
     display: none;
 }
+.createClose{
+    background-color: firebrick;
+    border: none;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    border-radius: 3px;
+    cursor: pointer;
+}
 
+.divClose{
+    display: flex;
+    justify-content: flex-end;
+     width: 100%;
+}
 .categories{
         background-color: #00529C;
         padding-top: 10px;

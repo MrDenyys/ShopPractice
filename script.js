@@ -18,9 +18,9 @@ const remoweButton = document.createElement(`button`);
 
 const addObject = document.querySelector(`button[data-Add]`);  // console.log(addObject);
 
-addObject.addEventListener("click", () => {
+// addObject.addEventListener("click", () => {
 
-})
+// })
 
 remoweButton.className = `buttonRemowe`;
 
@@ -60,6 +60,9 @@ color: grey;
 create.className = `containerCreate`;
 
 create.innerHTML = `
+<div class="divClose">
+<button class="createClose">X</button>
+</div>
 <p>Photo</p>
 <input type="file">
 <p>Name</p>
@@ -68,6 +71,14 @@ create.innerHTML = `
 <input type="number">
 <h1>Create</h1>
 `
+
+const closeObject = create.querySelector(`.createClose`); // console.log(closeObject);
+
+closeObject.addEventListener( "click" ,() => {
+create.style.display = "none"
+})
+
+
 
 addObject.addEventListener("click",() => {
 create.style.display = "flex"
