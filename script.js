@@ -22,6 +22,9 @@ const addObject = document.querySelector(`button[data-Add]`);  // console.log(ad
 
 // })
 
+
+
+
 remoweButton.className = `buttonRemowe`;
 
 remoweButton.style.display = "none";
@@ -64,13 +67,23 @@ create.innerHTML = `
 <button class="createClose">X</button>
 </div>
 <p>Photo</p>
-<input type="file">
+<input class="productPhoto" type="file">
 <p>Name</p>
-<input type="text">
+<input class="productName" type="text">
 <p>price</p>
-<input type="number">
-<h1>Create</h1>
+<input class="productPrice" type="number">
+<button class="addProducts">Create</button>
 `
+const productPhotoInput = document.querySelector(`.productPhoto`); //console.log(productPhotoInput);
+
+const productNameInput = document.querySelector(`.productName`);
+
+const productPriceInput = document.querySelector(`.productPrice`);
+
+
+create.querySelector(`.addProducts`).addEventListener("click", () => {
+products.push(productNameInput.value);
+});
 
 const closeObject = create.querySelector(`.createClose`); // console.log(closeObject);
 
@@ -89,7 +102,7 @@ document.body.appendChild(create);
 document.body.appendChild(infos);
 //console.log(button); проверка 
 
-console.log(trecker);
+// console.log(trecker);
 
 infoButton.addEventListener("click" ,  () => {
     infos.style.display = "block";

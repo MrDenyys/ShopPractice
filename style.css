@@ -130,6 +130,7 @@ button[data-Add]{
     flex-direction: column;
 
     display: none;
+    background-image: url(/pngs/file-tap-0002-bn_4665-tapeta-w-bialo-niebieskie-pasy-pionowe-scienna-dla-chlopca-dla-pokoj-dzieciecy-wzor-dekoori-pl.jpg);
 }
 .createClose{
     background-color: firebrick;
