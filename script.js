@@ -74,16 +74,51 @@ create.innerHTML = `
 <input class="productPrice" type="number">
 <button class="addProducts">Create</button>
 `
-const productPhotoInput = document.querySelector(`.productPhoto`); //console.log(productPhotoInput);
+const productPhotoInput = create.querySelector(`.productPhoto`); //console.log(productPhotoInput);
 
-const productNameInput = document.querySelector(`.productName`);
+const productNameInput = create.querySelector(`.productName`);
 
-const productPriceInput = document.querySelector(`.productPrice`);
+const productPriceInput = create.querySelector(`.productPrice`);
 
 
 create.querySelector(`.addProducts`).addEventListener("click", () => {
-products.push(productNameInput.value);
+    if (productNameInput.value === "") {
+        productNameInput.style.backgroundColor = 'red';
+
+        setTimeout(() => {
+            productNameInput.style.backgroundColor = '#fff'
+        }, 3000);
+
+        return;
+
+    }else if (productPriceInput.value === "") {
+    productPriceInput.style.backgroundColor = 'red';
+
+        setTimeout(() => {
+            productPriceInput.style.backgroundColor = '#fff'
+        }, 3000);
+
+        return;
+
+    }else if (productPhotoInput.files.length === 0) {
+
+        productPhotoInput.style.backgroundColor = 'red';
+
+        setTimeout(() => {
+        productPhotoInput.style.backgroundColor = '#fff'
+        }, 3000);
+        return;
+    }
+  const product = {
+    name: productNameInput.value,
+    price: productPriceInput.value,
+    photo: productPhotoInput.files[0]
+};
+products.push(product);
+console.log(products);
 });
+
+
 
 const closeObject = create.querySelector(`.createClose`); // console.log(closeObject);
 
