@@ -75,8 +75,8 @@ button[data-Add]{
 }
 
 .goods img{
-   width: 200px;
-   height: 300px;
+    width: 80%;
+    height: 50%;
 }
 .goods div{
     width: 300px;

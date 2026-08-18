@@ -10,13 +10,15 @@ const create = document.createElement(`div`);
 
 const cartCount = document.querySelector('p[data-count]');
 
-const cartAdd = document.querySelectorAll(`button[data-addCart]`);
+const cartAdd = document.querySelectorAll(`.dataAddCart`);
 
 const cartMinus = document.querySelector(`div[data-secondMain]`);
 
 const remoweButton = document.createElement(`button`);
 
 const addObject = document.querySelector(`button[data-Add]`);  // console.log(addObject);
+
+const containerProducts = document.querySelector(`.goods`); // console.log(containerProducts);
 
 // addObject.addEventListener("click", () => {
 
@@ -55,6 +57,7 @@ infos.className = `containerInfo`;
 infos.innerHTML = `
 <h1>Здесь вы можете создавать свои продукты добавлять их и так же удалять</h1>
 <p>Правила как создать </p>
+<p>Картинка должна быть в пнг!</p>
 <button id="closeInfo">Закрыть</button>
 `
 infos.style.cssText = `
@@ -114,8 +117,31 @@ create.querySelector(`.addProducts`).addEventListener("click", () => {
     price: productPriceInput.value,
     photo: productPhotoInput.files[0]
 };
+
+const imageUrl = URL.createObjectURL(product.photo);
+
 products.push(product);
+
+productPhotoInput.value = "";
+productNameInput.value = "";
+productPriceInput.value = "";
+
 console.log(products);
+
+const card = document.createElement("div");
+
+card.className = `div-goods`;
+
+card.innerHTML = `
+<img src="${imageUrl}" alt="" >
+<p>${product.name}</p>
+<p>${product.price}</p>
+<button data-addCart="" class="dataAddCart" >Add to cart</button>
+`
+
+containerProducts.append(card);
+
+create.style.display = `none`;
 });
 
 
