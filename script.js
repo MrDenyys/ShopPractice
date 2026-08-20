@@ -138,6 +138,17 @@ card.innerHTML = `
 <p>${product.price}</p>
 <button data-addCart="" class="dataAddCart" >Add to cart</button>
 `
+const newCartButton = card.querySelector(".dataAddCart");
+
+newCartButton.addEventListener("click", () => {
+    count++;
+    cartCount.textContent = count;
+    
+    if (count > 0) {
+    remoweButton.style.display = "block";
+}
+});
+
 
 containerProducts.append(card);
 
